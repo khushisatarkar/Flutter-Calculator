@@ -9,9 +9,9 @@ class CalculatorScreen extends StatefulWidget {
 }
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
-  String number1 = "";
-  String operand = "";
-  String number2 = "";
+  String number1 = ""; // . 0-9
+  String operand = ""; // + - * /
+  String number2 = ""; // . 0-9
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,9 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                   alignment: Alignment.bottomRight,
                   padding: EdgeInsets.all(12),
                   child: Text(
-                    "0",
+                    "$number1$operand$number2".isEmpty
+                        ? "0"
+                        : "$number1$operand$number2", //default value on screen
                     style: const TextStyle(
                       fontSize: 48,
                       fontWeight: FontWeight.bold,
@@ -78,19 +80,25 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
           borderRadius: BorderRadius.circular(100),
         ),
         child: InkWell(
-          onTap: () {},
+          onTap: () => onBtnTap(value),
           child: Center(
             child: Text(
               value,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 24,
+                fontSize: 28,
               ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  void onBtnTap(String value) {
+    setState(() {
+      number1 += value;
+    });
   }
 
   Color getBtnColor(value) {
