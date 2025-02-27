@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# calc
+# Flutter-Calculator
 
 A new Flutter project.
 
@@ -17,4 +16,3 @@ For help getting started with Flutter development, view the
 samples, guidance on mobile development, and a full API reference.
 =======
 # Flutter-Calculator
->>>>>>> 80bbb5deebce00d16d308294a649a458aa8bf82e

@@ -46,7 +46,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
             //buttons
             SizedBox(
               height:
-                  screenSize.height / 1.8, // Reserve fixed space for buttons
+                  screenSize.height / 1.8, // reserve fixed space for buttons
               child: Wrap(
                 children: Btn.buttonValues
                     .map(
@@ -96,9 +96,31 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   void onBtnTap(String value) {
-    setState(() {
+    // number1 operand number2
+    // 234       +       456
+
+    if (value != Btn.dot && int.tryParse(value) == null) {
+      if (operand.isNotEmpty && number2.isNotEmpty) {
+        // calculate the equation before assigning new operand
+      }
+      operand = value;
+    } else if (number1.isEmpty || operand.isEmpty) {
+      if (value == Btn.dot && number1.contains(Btn.dot)) return;
+      if (value == Btn.dot && (number1.isEmpty || number1 == Btn.n0)) {
+        // number1 = "" || "0"
+        value = "0.";
+      }
       number1 += value;
-    });
+    } else if (number2.isEmpty || operand.isNotEmpty) {
+      if (value == Btn.dot && number2.contains(Btn.dot)) return;
+      if (value == Btn.dot && (number2.isEmpty || number2 == Btn.n0)) {
+        // number1 = "" || "0"
+        value = "0.";
+      }
+      number2 += value;
+    }
+
+    setState(() {});
   }
 
   Color getBtnColor(value) {

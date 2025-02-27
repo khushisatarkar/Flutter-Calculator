@@ -7,7 +7,7 @@ class Btn {
   static const String add = "+";
   static const String subtract = "-";
   static const String calculate = "=";
-  static const String dot = ".";
+  static const String dot = "."; // decimal point
 
   static const String n0 = "0";
   static const String n1 = "1";
