@@ -96,6 +96,43 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
   }
 
   void onBtnTap(String value) {
+    if (value == Btn.del) {
+      delete();
+      return;
+    }
+
+    if (value == Btn.clr) {
+      clearAll();
+      return;
+    }
+
+    appendValue(value);
+  }
+
+// delete one from the end
+  void delete() {
+    if (number2.isNotEmpty) {
+      // 1234 => 123
+      number2 = number2.substring(0, number2.length - 1);
+    } else if (operand.isNotEmpty) {
+      operand = "";
+    } else if (number1.isNotEmpty) {
+      number1 = number1.substring(0, number1.length - 1);
+    }
+
+    setState(() {});
+  }
+
+// clears all the output
+  void clearAll() {
+    number1 = "";
+    operand = "";
+    number2 = "";
+
+    setState(() {});
+  }
+
+  void appendValue(String value) {
     // number1 operand number2
     // 234       +       456
 
