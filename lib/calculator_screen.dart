@@ -160,8 +160,7 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     // 434+324
     if (number1.isNotEmpty && operand.isNotEmpty && number2.isNotEmpty) {
       // calculate before conversion
-      // final res=number1 operand number2;
-      // number1=res;
+      calculate();
     }
     if (operand.isNotEmpty) {
       // cannot be converted
@@ -206,9 +205,12 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
     if (value != Btn.dot && int.tryParse(value) == null) {
       if (operand.isNotEmpty && number2.isNotEmpty) {
         // calculate the equation before assigning new operand
+        calculate();
       }
       operand = value;
-    } else if (number1.isEmpty || operand.isEmpty) {
+    }
+    // assign value to number1 variable
+    else if (number1.isEmpty || operand.isEmpty) {
       if (value == Btn.dot && number1.contains(Btn.dot)) return;
       if (value == Btn.dot && (number1.isEmpty || number1 == Btn.n0)) {
         // number1 = "" || "0"
