@@ -1,17 +1,30 @@
 # Flutter-Calculator
 
-A new Flutter project.
+A simple and elegant calculator app built using Flutter. This project demonstrates the use of Flutter widgets, basic state management, and UI design.
 
-## Getting Started
+📱 Screenshots
 
-This project is a starting point for a Flutter application.
+<img src="screenshots\calc-app.png" width="300"/>
 
-A few resources to get you started if this is your first Flutter project:
+-----------------------------
+🚀 Features
+- Basic arithmetic operations: addition, subtraction, multiplication, division, percentage
+- Clean and responsive UI
+- Clear and backspace functionality
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+-----------------------------
+🛠️ Built With 
+Flutter – UI toolkit
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
+Dart – Programming language
+
+-----------------------------
+▶️ Getting Started
+Prerequisites
+- Flutter SDK
+- Android Studio / VS Code
+- Emulator or physical device
+
+-----------------------------
+
+🙋‍♀️ Developed By Khushi Satarkar (Linkedin: [https://www.linkedin.com/in/khushi-satarkar-039056254/])
